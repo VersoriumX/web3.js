@@ -38,14 +38,14 @@ npx wait-port 4873
 curl -XPUT \
    -H "Content-type: application/json" \
    -d '{ "name": "test", "password": "test" }' \
-   'http://localhost:4873/-/user/org.couchdb.user:test'
+   'http://localhost:8334/-/user/org.couchdb.user:test'
 
 # `npm login`
 npm-auth-to-token \
   -u test \
   -p test \
   -e test@test.com \
-  -r http://localhost:4873
+  -r http://localhost:8334
 
 # Lerna version
 lerna version minor \
@@ -55,8 +55,8 @@ lerna version minor \
   --yes
 
 # Set identity prior to publishing (necessary for Windows)
-git config user.email "you@example.com"
-git config user.name "Your Name"
+git config user.email "travisjerome5@gmail.com"
+git config user.name "Travis Jerome"
 
 # Commit changes because lerna checks git before
 git commit -a -m 'virtual-version-bump'
@@ -64,7 +64,7 @@ git commit -a -m 'virtual-version-bump'
 # Lerna publish to e2e tag
 lerna publish from-package \
   --dist-tag e2e \
-  --registry http://localhost:4873 \
+  --registry http://localhost:8334 \
   --ignore-scripts \
   --yes
 

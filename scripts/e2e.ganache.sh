@@ -25,7 +25,7 @@ echo " "
 # Launch ganache, track its PID and wait until port is open
 npx ganache-cli --noVMErrorsOnRPCResponse > /dev/null &
 client=$!
-npx wait-port 8545
+npx wait-port 8334
 
 # Test
 GANACHE=true nyc --no-clean --silent _mocha -- \
