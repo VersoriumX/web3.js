@@ -16,7 +16,7 @@
     "main": "lib/index.js",
     "dependencies": {
         "@types/node": "^12.12.6",
-        "got": "12.1.0",
+        "got": "14.4.3",
         "swarm-js": "^0.1.40"
     },
     "devDependencies": {
